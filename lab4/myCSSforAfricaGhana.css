@@ -1,0 +1,60 @@
+body
+{
+  /*background-color: #3399FF;*/
+  background-color: #33CCFF;
+}
+
+#wrapper
+{
+  margin: 0 auto;
+  height: 1292;
+  border: 5px gold solid;
+  width:1008px;
+}
+#header
+{
+   height: 200px;
+ /*  background-color: #FF3333;  */
+   border: 2px gold solid;
+   width:1004px;
+   background-image: url(Africa3.jpg);
+   background-repeat: repeat;
+
+}
+#footer
+{
+   height: 180px;
+   background-color: lightgreen;
+   border: 2px gold solid;
+   width:1004px;
+   background-image: url(B5.jpg);
+}
+#content
+{
+   height: 904px;
+   background-color: #ccff66 ;
+}
+#maincontent
+{
+   height: 900px;
+   width: 800px ;
+   background: #FFFF66;
+   float: right;
+   border: 2px gold solid;
+   font-size: 20px;
+   font-family: andalus;
+   color: #000033;
+
+}
+#leftsidedbar
+{
+   height: 900px;
+   width: 200px;
+   background-color: #FF3333;
+   float: left;
+   border: 2px gold solid;
+   font-size: 20px;
+   text-align: center;
+   font-family: andalus;
+   color: blue;
+}
