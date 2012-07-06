@@ -7,7 +7,7 @@ class Post(models.Model):
     updated=models.DateField()
     def __unicode__(self):
         return self.title
-
+    
 class Comment(models.Model):
     body=models.TextField()
     author=models.CharField(max_length=60)
@@ -16,4 +16,5 @@ class Comment(models.Model):
     post=models.ForeignKey(Post)
     def __unicode__(self):
         return self.author
-    
+
+
