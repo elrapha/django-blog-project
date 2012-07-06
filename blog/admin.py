@@ -15,8 +15,7 @@ class PostAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     list_display=('author','body_first60','updated')
     list_filter=('created','author')
-    def body_first60(self,empty):
-        return self.body[:60]
+    
 
 
 admin.site.register(Post,PostAdmin)

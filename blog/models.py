@@ -14,6 +14,8 @@ class Comment(models.Model):
     created=models.DateField(auto_now_add=True)
     updated=models.DateField(auto_now=True)
     post=models.ForeignKey(Post)
+    def body_first60(self):
+        return self.body[:60]
     def __unicode__(self):
         return self.author
 
