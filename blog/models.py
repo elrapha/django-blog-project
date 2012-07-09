@@ -17,6 +17,6 @@ class Comment(models.Model):
     def body_first60(self):
         return self.body[:60]
     def __unicode__(self):
-        return self.author
+        return self.body
 
 
