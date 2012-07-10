@@ -5,10 +5,11 @@
 {% for post in list_of_post %}
 <fieldset>
 <p>Title: {{ post.title}} </p>
-<p>Content:  {{ post.body }}</p>
+<p><b><I> {{ post.body }}</I></b></p>
 <p>Created on: {{post.created}}</p>
 <p>Updated on: {{post.updated}}</p>
 </fieldset>
+</br>
 {% endfor %}
 {% endblock %}
 
