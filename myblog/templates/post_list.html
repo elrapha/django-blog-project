@@ -1,11 +1,11 @@
-{% extends "base.html" %}
-{% block title %}POSTS POSTS POSTS{% endblock %}
+{% extends "base.html" %}s
 {% block content %}
 <p>POSTS</p>
 {% for post in list_of_post %}
 <fieldset>
+<p><h3><a href="/blog/posts/{{post.id}}/true">See Details</a></h3></p>
 <p>Title: {{ post.title}} </p>
-<p><b><I> {{ post.body }}</I></b></p>
+<p><b><I> {{ post.body|slice:":60"}} ...</I></b></p>
 <p>Created on: {{post.created}}</p>
 <p>Last Updated: {{post.updated}}</p>
 </fieldset>

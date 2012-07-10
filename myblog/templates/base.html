@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html lang="en">
 <head>
-<title>{% block title %}{% endblock %}</title>
+<title>{% block title %}yblog{% endblock %}</title>
 </head>
 <body style="background-color:#FFFDD0">
 <div style="font-size: 19px; font-family:magneto; margin: 0 auto; width:800px;background-color:#FFFDD0">
@@ -9,13 +9,19 @@
 <center style="color: grey;
 text-shadow: 2px 2px 2px black; font-size:40px;font-family:magneto"
 >
+<b style="font-size:60px">yblog</b>
+<br>
 POSTS AND COMMENTS
 </center>
 {% endblock%}
+</br>
+<a href='/blog/posts/'>See <b>yblog</b> Posts</a>
+</br>
+<div id='content'>
 {% block content %}
 
 {% endblock %}
-
+</div>
 
 
 {% block footer %}

@@ -1,3 +1,4 @@
+
 # Create your views here.
 
 """
@@ -16,8 +17,8 @@ def post_list(request):
     #return HttpResponse('This should be a list of posts!')
     return render_to_response('post_list.html',locals())
 
-def post_detail(request, ID, showComments):
-    POST=Post.objects.get(id=ID)
+def post_detail(request, id, showComments):
+    POST=Post.objects.get(id=id)
     title=POST.title
     body=POST.body
     created=POST.created
