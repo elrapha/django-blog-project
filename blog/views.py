@@ -34,8 +34,9 @@ def post_search(request, term):
     return render_to_response('post_search.html',locals())
 
 def home(request):
-    print 'it works'
-    return HttpResponse('hello world. Ete zene?') 
+    #print 'it works'
+    #return HttpResponse('hello world. Ete zene?')
+    return render_to_response('post_home.html','') 
 
 
 

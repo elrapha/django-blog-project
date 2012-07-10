@@ -5,12 +5,16 @@
 </head>
 <body>
 <div id="maincontent" style="font-size: 19px; font-family:magneto; margin: 0 auto; width:800px;">
+{% block header %}
 <center style="color: grey;
 text-shadow: 2px 2px 2px black; font-size:40px;font-family:magneto"
 >
 POSTS AND COMMENTS
 </center>
-{% block content %}{% endblock %}
+{% endblock%}
+{% block content %}
+
+{% endblock %}
 
 
 {% block footer %}
