@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}The current time{% endblock %}
+{% block content %}
+<p>Title </p>
+{% for post in list_of_post %}
+<li>{{ post }}</li>
+{% endfor %}
+{% endblock %}
+

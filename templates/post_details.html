@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}POST DETAILS{% endblock %}
+{% block content %}
+<fieldset >
+<legend>POST</legend>
+<p>Title: {{ title}} </p>
+<p><b><i>{{ body }}</b></p>
+<p>Posted on: {{ created }}</br>
+Updated on: {{ updated }}</p>
+</fieldset>
+</br>
+<fieldset >
+<legend>COMMENTS</legend>
+{% for com in comments %}
+<fieldset >
+<legend>By : <I>{{ com.author }}</I></legend>
+<b><i>{{ com.body }}</b></br></br>
+Posted on: {{ com.created }}</br>
+Updated on: {{ updated }}
+</fieldset>
+{% endfor %}
+</fieldset>
+{% endblock %}
+

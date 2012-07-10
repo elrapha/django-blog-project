@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}POSTS POSTS POSTS{% endblock %}
+{% block content %}
+<p>POSTS</p>
+{% for post in list_of_post %}
+<fieldset>
+<p>Title: {{ post.title}} </p>
+<p>Content:  {{ post.body }}</p>
+<p>Created on: {{post.created}}</p>
+<p>Updated on: {{post.updated}}</p>
+</fieldset>
+{% endfor %}
+{% endblock %}
+
