@@ -5,7 +5,7 @@ This code should be copied and pasted into your blog/views.py file before you be
 """
 
 #from django.template import Context, loader
-#from django.http import HttpResponse
+from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from models import Post, Comment 
 
