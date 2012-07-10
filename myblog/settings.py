@@ -1,5 +1,6 @@
 # Django settings for myblog project.
-
+import os
+PROJECT_ROOT=os.path.realpath(os.path.dirname(__file__))
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -109,8 +110,8 @@ ROOT_URLCONF = 'myblog.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'myblog.wsgi.application'
 
-TEMPLATE_DIRS = (
-'/home/elrapha/Documents/elrapha/django-blog-project/templates',
+TEMPLATE_DIRS = ( os.path.join(PROJECT_ROOT,'templates'),
+#'/home/elrapha/Documents/elrapha/django-blog-project/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
