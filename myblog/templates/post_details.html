@@ -14,6 +14,8 @@ Last Updated: {{ updated }}</p>
 {% for com in comments %}
 <fieldset >
 <legend>By : <I>{{ com.author }}</I></legend>
+<div><a href="/blog/comments/{{ com.id }}/edit">
+Edit Comment</a></div>
 <b><i>{{ com.body }}</b></br></br>
 Posted on: {{ com.created }}</br>
 Last Updated: {{ updated }}
@@ -21,5 +23,14 @@ Last Updated: {{ updated }}
 </br>
 {% endfor %}
 </fieldset>
+
+<h3>New comment:</h3>
+<div>
+<form method='post' action="">
+{{ form.as_p }}
+<input type='submit' name='Submit'>
+</form>
+</div>
+
 {% endblock %}
 

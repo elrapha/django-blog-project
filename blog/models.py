@@ -5,6 +5,10 @@ class Post(models.Model):
     body=models.TextField()
     created=models.DateField(auto_now_add=True)
     updated=models.DateField(auto_now=True)
+
+    def get_absolute_url(self):
+        return "/blog/posts/%i/true" % self.id
+
     def __unicode__(self):
         return self.title
     
