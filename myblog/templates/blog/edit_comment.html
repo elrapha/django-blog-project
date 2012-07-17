@@ -1,0 +1,10 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<fieldset class="loginField" style="width:300px;height:300px">
+<legend align="right">Edit Comment</legend>
+<form method='post' action="">
+{{ form.as_p }}</br>
+<input type='submit' name='Submit' value="Save">
+</form>
+</fieldset>
+{% endblock %}

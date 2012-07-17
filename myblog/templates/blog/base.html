@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+<title>{% block title %}yblog{% endblock %}</title>
+<link rel="stylesheet" href="/static/bootstrap/css/mybootstrap.css"/>
+<!--<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"/>-->
+<!--<link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">-->
+<!--<link rel="stylesheet" href="/static/bootstrap/css/style.css"/>-->
+</head>
+<body  >
+	
+	   <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#" >yblog</a>
+           {% if logged_in %}
+			<div style="text-align:left;"><a href='/reg/logout/'
+			class="btn btn-primary btn-large" style="float: right;"> Logout &raquo;</a> </div>
+			<div style="float: right; color:#fffda0; font-size:25px ;">
+				 <br>{{ request.user }}</div>
+			{% else %}
+			<div style="text-align:left;"><a href='/reg/login/'
+			class="btn btn-primary btn-large" style="float: right;"> Login &raquo;</a> </div>
+			{% endif %}
+          <div class="nav-collapse">
+            <ul class="nav ">
+              <li class="active"><a href="/blog/">Home</a></li>
+              <li><a href="/blog/posts/"> View All Posts</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+         
+			
+			
+        </div>
+      </div>
+    </div>
+    </br></br>
+   
+<div style="margin:0 auto; width:800px; ">
+</br>
+<div class="hero-unit" style="text-align:center;color: #0099CC;
+text-shadow: 2px 2px 2px black; font-size:60px;padding:15px;font-family:calibri">
+	
+	{% block header %}
+	</br>
+            <p style="font-size:70px; ">yblog</p></br>
+            <p style="font-size:30px; ">It's why you blog</p>
+    {% endblock%}
+</div>
+
+
+
+{% block content %}
+
+{% endblock %}
+
+
+{% block footer %}
+</br></br></br></br></br></br></br>
+{% endblock %}
+</div>
+
+</div>
+</body>
+</html>
+

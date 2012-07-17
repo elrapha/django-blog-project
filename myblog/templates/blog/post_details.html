@@ -1,0 +1,47 @@
+{% extends "blog/base.html" %}
+{% block title %}POST DETAILS{% endblock %}
+{% block content %}
+<p>{{current_user.username}}</p>	
+<fieldset class="loginField" >
+<legend>POST</legend>
+<p>Title: {{ title}} </p>
+<p><b><i>{{ body }}</b></p>
+<p>Posted on: {{ created }}</br>
+Last Updated: {{ updated }}</p>
+</fieldset>
+
+{% ifequal showComments trueval %}
+<fieldset class="loginField" >
+<legend align="left">COMMENTS</legend>
+<div style="height:400px; overflow:auto">
+{% for com in comments %}
+<fieldset class="loginField" >
+<legend align="right"><I>{{ com.author }}</I></legend>
+<b><i>{{ com.body }}</b></br></br>
+Posted on: {{ com.created }}</br>
+Last Updated: {{ updated }}
+
+{% ifequal com.author current_user %}
+<a href="/blog/comments/{{com.id}}/edit" 
+class="btn btn-primary btn-large" style="float:right">
+Edit  &raquo;</a>
+{% endifequal %}
+</fieldset>
+
+{% endfor %}
+</div>
+</fieldset>
+
+{% endifequal %}
+
+<fieldset class="loginField" style="width:300px;height:300px">
+<legend align="right">Add Comment</legend>
+<form method='post' action="">
+<center>
+{{ form.as_p }}</br>
+<input type='submit' name='Submit' value="Add">
+</form>
+</center>
+</fieldset>
+{% endblock %}
+

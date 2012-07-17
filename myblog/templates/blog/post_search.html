@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<fieldset class="loginField" >
+<p>POSTS SEARCH</p>
+<p>List of posts that contain " {{ keyword }} "</p>
+<ul>
+{% for post in list_of_post %}
+<li><p><a href="/blog/posts/{{post.id}}/true">{{ post.title}} </a></p></li>
+
+{% endfor %}
+</ul>
+</fieldset>
+{% endblock %}
+

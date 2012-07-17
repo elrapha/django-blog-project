@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<p style="text-align:center;"><b>ALL POSTS</b></p>
+<div class="hero-unit" style="height:500px;">
+{% for post in list_of_post %}
+<fieldset class="loginField" >
+<p>Title: {{ post.title}} </br>
+<b><I> {{ post.body|slice:":60"}} ...</I></b></br>
+Created on: {{post.created}}</br>
+Last Updated: {{post.updated}}</p>
+<p><h3><a href="/blog/posts/{{post.id}}/true" 
+class="btn btn-primary btn-large" style="float:right">
+See Details &raquo;</a></h3></p>
+</fieldset>
+</br>
+{% endfor %}
+
+</div>
+
+{% endblock %}
+

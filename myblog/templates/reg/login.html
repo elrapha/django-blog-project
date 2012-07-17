@@ -1,0 +1,29 @@
+<!--
+the template for your login page
+This should be places in the templates/reg
+folder. Name it what you will, but make sure
+that the view function has the correct path
+
+Also, remember that for this template
+the lab has you make some changes
+-->
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+{% if logged_in %} 
+<fieldset class="loginField">
+<h3>You are logged in</h3>
+</fieldset>
+{% else %}
+<fieldset class="loginField" style="width:230px">
+<legend align="right" > Login </legend>
+<form action="." method="post">
+     {{ form.as_p }}
+     <input type="submit" value="Login!" />
+  </form>
+</fieldset>
+  
+{% endif %}
+
+{% endblock %}
