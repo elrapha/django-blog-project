@@ -12,7 +12,7 @@ from models import Post, Comment
 from django.forms import ModelForm
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseRedirect,HttpResponseForbidden
-
+from django import forms
 from reg.views import LoginForm
 
 def post_list(request):
@@ -77,16 +77,34 @@ def edit_comment(request,comID):
         
     return render_to_response('blog/edit_comment.html',locals())
 
+class SearchForm(forms.Form):
+    key = forms.CharField()
 
+@csrf_exempt
 def post_search(request, term):
     logged_in =request.user.is_authenticated()# get login status
     current_user=str(request.user) # get current user
+    form=SearchForm()
     if request.user.is_authenticated():
-        keyword=term
-        list_of_post = Post.objects.filter(body__icontains=term)# check if body of bost contains search term
-        return render_to_response('blog/post_search.html',locals())
+        if request.method == 'POST':
+            searchword=str(request.POST['key'])
+            search_url="/blog/posts/search/" + searchword
+            return HttpResponseRedirect(search_url)
+        
+        if term != None:
+            searchword=term
+            form=SearchForm(initial={"key":searchword}) 
+            list_of_post = Post.objects.filter(body__icontains=term)# check if body of bost contains search term
+            return render_to_response('blog/post_search.html',locals())
+        else:
+            list_of_post=""
+            return render_to_response('blog/post_search.html',locals())
+
+        
+            
     else:
         return HttpResponseRedirect('/reg/login/')
+
 def home(request):
     current_user=str(request.user)# get current user
     logged_in =request.user.is_authenticated()# get login status

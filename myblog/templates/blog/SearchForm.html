@@ -1,22 +1,15 @@
 {% extends "blog/base.html" %}
 {% block content %}
+{% if key_entered %}
+
+{% endif %}
 <fieldset class="loginField" >
-<p>Search Posts</p>
+<p>POSTS SEARCH  Search Form</p>
 <legend align="right">Search</legend>
 <form method='post' action="">
 {{ form.as_p }}</br>
 <input type='submit' name='Submit' value="Search">
 </form>
-</fieldset>
-
-
-<fieldset class="loginField" >
-<p>List of posts that contain " {{ searchword }} "</p>
-<ul>
-{% for post in list_of_post %}
-<li><p><a href="/blog/posts/{{post.id}}/true">{{ post.title}} </a></p></li>
-{% endfor %}
-</ul>
 </fieldset>
 {% endblock %}
 
